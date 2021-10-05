@@ -7,7 +7,21 @@ Desigining a Gui Application in c++ with qt and implement various Hashfunctions.
 
 A hash function is any function that can be used to map data of arbitrary size to fixed-size values. The values returned by a hash function are called hash values, hash codes, digests, or simply hashes. It is a one-way function, that is, a function for which is practically infeasible to invert or reverse the computation. Ideally, the only way to find a message that produces a given hash is to attempt a brute-force search of possible inputs to see if they produce a match.
 
+<br>
 
+![Example_01](https://github.com/Lion1Blue/Hashfunctions/blob/main/Pictures/Example_01.png)
+
+<br>
+
+The ideal cryptographic hash function has the following main properties:
+
+- it is deterministic, meaning that the same message always results in the same hash
+- it is quick to compute the hash value for any given message
+- it is infeasible to generate a message that yields a given hash value (i.e. to reverse the process is also known that generated the given hash value)
+- it is infeasible to find two different messages with the same hash value
+- a small change to a message should change the hash value so extensively that a new hash value appears uncorrelated with the old hash value ([avalanche effect](https://en.wikipedia.org/wiki/Avalanche_effect))
+ 
+## Conzept of the UI
 
 ## Sources
 https://en.wikipedia.org/wiki/Hash_function  
