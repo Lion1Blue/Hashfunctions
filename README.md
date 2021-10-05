@@ -9,7 +9,7 @@ A hash function is any function that can be used to map data of arbitrary size t
 
 <br>
 
-![Example_01](https://github.com/Lion1Blue/Hashfunctions/blob/main/Pictures/Example_01.png)
+![Example_01](https://github.com/Lion1Blue/Hashfunctions/blob/main/Pictures/Example.png)
 
 <br>
 
