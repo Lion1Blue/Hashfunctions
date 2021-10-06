@@ -18,9 +18,11 @@ The ideal cryptographic hash function has the following main properties:
 - it is deterministic, meaning that the same message always results in the same hash
 - it is quick to compute the hash value for any given message
 - it is infeasible to generate a message that yields a given hash value (i.e. to reverse the process is also known that generated the given hash value)
-- it is infeasible to find two different messages with the same hash value
-- a small change to a message should change the hash value so extensively that a new hash value appears uncorrelated with the old hash value ([avalanche effect](https://en.wikipedia.org/wiki/Avalanche_effect))
- 
+- it is infeasible to find two different messages with the same hash value (collisions)
+- a small change to a message should change the hash value so extensively that a new hash value appears uncorrelated with the old hash value ([avalanche effect](https://en.wikipedia.org/wiki/Avalanche_effect))  
+
+Implementation is based on parity-preserving bit operations (XOR and ADD), multiply, or divide  
+
 ## Conzept of the UI
 
 ![GUI_Concept](https://github.com/Lion1Blue/Hashfunctions/blob/main/Pictures/GUI_Concept.png)
@@ -29,7 +31,14 @@ The ideal cryptographic hash function has the following main properties:
 
 This is a possible Designt for the UI. At the top is a GroupBox with RadioButtons or a ComboBox in which the Hash-Algorithm can be chosen. At the center of the UI is a InputField where the usere can input values and at the bottom is a OutputField which will contain the hash value. At the bottom right corner is a Button to generate the hash value.
 
-## 
+## Hashfunctions that will be implemented
+
+
+
+### Identity hash function
+If the data to be hashed is small enough, one can use the data itself (reinterpreted as an integer) as the hashed value. The cost of computing this identity hash function is effectively zero. This hash function is perfect, as it maps each input to a distinct hash value.
+
+### 
 
 ## Sources
 https://en.wikipedia.org/wiki/Hash_function  
