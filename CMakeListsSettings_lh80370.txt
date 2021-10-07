@@ -1,0 +1,2 @@
+set (Qt5_ROOTDIR "C:/Qt/5.12.2/msvc2017_64" CACHE PATH "Qt5 root")
+set (Qt5_DIR "${Qt5_ROOTDIR}/lib/cmake/Qt5" CACHE PATH "Qt5 dir")
