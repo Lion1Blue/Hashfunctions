@@ -62,4 +62,3 @@ target_link_libraries (main GUI)
 #install(FILES "${CMAKE_INSTALL_PREFIX}/debug_dlls/Qt5Cored.dll" DESTINATION "${CMAKE_INSTALL_PREFIX}/build/src/GUI/Debug")
 #install(FILES "${CMAKE_INSTALL_PREFIX}/debug_dlls/Qt5Guid.dll" DESTINATION "${CMAKE_INSTALL_PREFIX}/build/src/GUI/Debug")
 #install(FILES "${CMAKE_INSTALL_PREFIX}/debug_dlls/Qt5Widgetsd.dll" DESTINATION "${CMAKE_INSTALL_PREFIX}/build/src/GUI/Debug")
-

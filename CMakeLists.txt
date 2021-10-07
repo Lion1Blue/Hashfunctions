@@ -45,6 +45,3 @@ include_directories(
 
 add_subdirectory(src/GUI)
 #add_subdirectory(src/Hashfunctions)
-
-
-#install(FILES "${PCL_ROOTDIR}/bin/pcl_surface_release.dll" DESTINATION "${CMAKE_INSTALL_PREFIX}/Release" CONFIGURATIONS RELEASE)
