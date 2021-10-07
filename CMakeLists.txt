@@ -44,4 +44,4 @@ include_directories(
 )
 
 add_subdirectory(src/GUI)
-#add_subdirectory(src/Hashfunctions)
+add_subdirectory(src/Hashfunctions)
