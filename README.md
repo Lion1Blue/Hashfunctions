@@ -59,6 +59,14 @@ where **p** and **m** are some chosen, positive numbers. It is called a **polino
 Obviously **m** should be a large number since the probability of two random strings colliding is about  ≈ 1/m.  
 A good choice for m is some large prime number. For example **m** = 10^9 + 9. This is a large number, but still small enough so that we can perform multiplication of two values using 64-bit integers.
 
+For example **p** = 53 and **m** = 10^9 + 9  
+input string is "Hello!", depending on how to interpret the string, either unicode oder ASCII - in this example ASCII is chosen - the hash code will differ.  
+Chars in ASCII:  
+H = 8, e = 101, l = 108, o = 111, ! = 33
+
+**hashcode** = (8 * 53^0 + 101 * 53^1 + 108 * 53^2 + 108 * 53^3 + 111 * 53^4 + 33 * 53^5) mod (10^9 + 9)
+= 692 681 983
+
 **************************************************************************************************************************************************************************
 
 ## Sources
