@@ -62,7 +62,7 @@ A good choice for m is some large prime number. For example **m** = 10^9 + 9. Th
 For example **p** = 53 and **m** = 10^9 + 9  
 input string is "Hello!", depending on how to interpret the string, either unicode oder ASCII - in this example ASCII is chosen - the hash code will differ.  
 Chars in ASCII:  
-H = 8, e = 101, l = 108, o = 111, ! = 33
+'H' = 8, 'e' = 101, 'l' = 108, 'o' = 111, '!' = 33
 
 **hashcode** = (8 * 53^0 + 101 * 53^1 + 108 * 53^2 + 108 * 53^3 + 111 * 53^4 + 33 * 53^5) mod (10^9 + 9)
 = 692 681 983
