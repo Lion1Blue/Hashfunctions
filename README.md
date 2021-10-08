@@ -38,17 +38,28 @@ This is a possible Designt for the UI. At the top is a GroupBox with RadioButton
 ### Identity hash function
 If the data to be hashed is small enough, one can use the data itself (reinterpreted as an integer) as the hashed value. The cost of computing this identity hash function is effectively zero. This hash function is perfect, as it maps each input to a distinct hash value.  
 
+**************************************************************************************************************************************************************************
+
 ### String Folding
 
 This function takes a string as input. It processes the string four bytes at a time, and interprets each of the four-byte chunks as a single long integer value. The integer values for the four-byte chunks are added together. In the end, the resulting sum is converted to the range 0 to M−1 using the modulus operator.  
 <br>
-For example, if the string “aaaabbbb” is passed to sfold, then the first four bytes (“aaaa”) will be interpreted as the integer value 1,633,771,873, and the next four bytes (“bbbb”) will be interpreted as the integer value 1,650,614,882. Their sum is 3,284,386,755 (when treated as an unsigned integer). If the table size is 101 then the modulus function will cause this key to hash to slot 75 in the table.
+For example, if the string “aaaabbbb” is passed to sfold, then the first four bytes (“aaaa”) will be interpreted as the integer value 1 633 771 873, and the next four bytes (“bbbb”) will be interpreted as the integer value 1 650 614 882. Their sum is 3 284 386 755 (when treated as an unsigned integer). If the table size is 101 then the modulus function will cause this key to hash to slot 75 in the table.
+
+**************************************************************************************************************************************************************************
 
 ### Polynomial rolling hash fuinction
 
-A good way to definde the hash of a string s of length n is  
+A good way to definde the hash of a string **s** of length **n** is   
 
-![PolynomialRollingFormula](https://github.com/Lion1Blue/Hashfunctions/blob/main/Pictures/Example.png)
+![PolynomialRollingFormula](https://github.com/Lion1Blue/Hashfunctions/blob/main/Pictures/PolynomialRolling.PNG)
+
+where **p** and **m** are some chosen, positive numbers. It is called a **polinomial rolling hash function**.
+
+Obviously **m** should be a large number since the probability of two random strings colliding is about  ≈ 1/m.  
+A good choice for m is some large prime number. For example **m** = 10^9 + 9. This is a large number, but still small enough so that we can perform multiplication of two values using 64-bit integers.
+
+**************************************************************************************************************************************************************************
 
 ## Sources
 https://en.wikipedia.org/wiki/Hash_function  
@@ -59,3 +70,4 @@ https://en.wikipedia.org/wiki/Cryptographic_hash_function
 https://www.geeksforgeeks.org/what-are-hash-functions-and-how-to-choose-a-good-hash-function/  
 https://www.tutorialspoint.com/cryptography/cryptography_hash_functions.htm
 https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashFuncExamp.html 
+https://cp-algorithms.com/string/string-hashing.html  
