@@ -23,7 +23,7 @@ The ideal cryptographic hash function has the following main properties:
 
 Implementation is based on parity-preserving bit operations (XOR and ADD), multiply, or divide  
 
-## Conzept of the UI
+## Concept of the UI
 
 ![GUI_Concept](https://github.com/Lion1Blue/Hashfunctions/blob/main/Pictures/GUI_Concept.png)
 
