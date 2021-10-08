@@ -6,8 +6,5 @@ public:
 	~Hashfunction();
 
 	void Foo();
-
-
-
 };
 
