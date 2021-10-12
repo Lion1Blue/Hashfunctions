@@ -15,6 +15,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+	void GenerateClicked();
+	void TextEditTextChanged();
+
 private:
     Ui::MainWindow *ui;
 };
