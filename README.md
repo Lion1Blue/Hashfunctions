@@ -13,7 +13,7 @@ A hash function is any function that can be used to map data of arbitrary size t
 
 <br>
 
-The ideal cryptographic hash function has the following main properties:
+The ideal hash function has the following main properties:
 
 - it is deterministic, meaning that the same message always results in the same hash
 - it is quick to compute the hash value for any given message
@@ -23,7 +23,7 @@ The ideal cryptographic hash function has the following main properties:
 
 Implementation is based on parity-preserving bit operations (XOR and ADD), multiply, or divide  
 
-## Conzept of the UI
+## Concept of the UI
 
 ![GUI_Concept](https://github.com/Lion1Blue/Hashfunctions/blob/main/Pictures/GUI_Concept.png)
 
@@ -36,9 +36,38 @@ This is a possible Designt for the UI. At the top is a GroupBox with RadioButton
 
 
 ### Identity hash function
-If the data to be hashed is small enough, one can use the data itself (reinterpreted as an integer) as the hashed value. The cost of computing this identity hash function is effectively zero. This hash function is perfect, as it maps each input to a distinct hash value.
+If the data to be hashed is small enough, one can use the data itself (reinterpreted as an integer) as the hashed value. The cost of computing this identity hash function is effectively zero. This hash function is perfect, as it maps each input to a distinct hash value.  
 
-### 
+**************************************************************************************************************************************************************************
+
+### String Folding
+
+This function takes a string as input. It processes the string eight bytes at a time, and interprets each of the four-byte chunks as a single long integer value. The integer values for the four-byte chunks are added together. In the end, the resulting sum is converted to the range 0 to M−1 using the modulus operator.  
+<br>
+For example, if the string “aaaabbbb” is passed to sfold, then the first four bytes (“aaaa”) will be interpreted as the integer value 1 633 771 873, and the next four bytes (“bbbb”) will be interpreted as the integer value 1 650 614 882. Their sum is 3 284 386 755 (when treated as an unsigned integer). If the table size is 101 then the modulus function will cause this key to hash to slot 75 in the table.
+
+**************************************************************************************************************************************************************************
+
+### Polynomial rolling hash fuinction
+
+A good way to definde the hash of a string **s** of length **n** is   
+
+![PolynomialRollingFormula](https://github.com/Lion1Blue/Hashfunctions/blob/main/Pictures/PolynomialRolling.PNG)
+
+where **p** and **m** are some chosen, positive numbers. It is called a **polinomial rolling hash function**.
+
+Obviously **m** should be a large number since the probability of two random strings colliding is about  ≈ 1/m.  
+A good choice for m is some large prime number. For example **m** = 10^9 + 9. This is a large number, but still small enough so that we can perform multiplication of two values using 64-bit integers.
+
+For example **p** = 53 and **m** = 10^9 + 9  
+input string is "Hello!", depending on how to interpret the string, either unicode oder ASCII - in this example ASCII is chosen - the hash code will differ.  
+Chars in ASCII:  
+'H' = 8, 'e' = 101, 'l' = 108, 'o' = 111, '!' = 33
+
+**hashcode** = (8 * 53^0 + 101 * 53^1 + 108 * 53^2 + 108 * 53^3 + 111 * 53^4 + 33 * 53^5) mod (10^9 + 9)
+= 692 681 983
+
+**************************************************************************************************************************************************************************
 
 ## Sources
 https://en.wikipedia.org/wiki/Hash_function  
@@ -48,3 +77,5 @@ https://www.dr-datenschutz.de/hashwerte-und-hashfunktionen-einfach-erklaert/
 https://en.wikipedia.org/wiki/Cryptographic_hash_function  
 https://www.geeksforgeeks.org/what-are-hash-functions-and-how-to-choose-a-good-hash-function/  
 https://www.tutorialspoint.com/cryptography/cryptography_hash_functions.htm
+https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashFuncExamp.html 
+https://cp-algorithms.com/string/string-hashing.html  
