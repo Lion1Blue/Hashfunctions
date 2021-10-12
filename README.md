@@ -13,7 +13,7 @@ A hash function is any function that can be used to map data of arbitrary size t
 
 <br>
 
-The ideal cryptographic hash function has the following main properties:
+The ideal hash function has the following main properties:
 
 - it is deterministic, meaning that the same message always results in the same hash
 - it is quick to compute the hash value for any given message
@@ -42,7 +42,7 @@ If the data to be hashed is small enough, one can use the data itself (reinterpr
 
 ### String Folding
 
-This function takes a string as input. It processes the string four bytes at a time, and interprets each of the four-byte chunks as a single long integer value. The integer values for the four-byte chunks are added together. In the end, the resulting sum is converted to the range 0 to M−1 using the modulus operator.  
+This function takes a string as input. It processes the string eight bytes at a time, and interprets each of the four-byte chunks as a single long integer value. The integer values for the four-byte chunks are added together. In the end, the resulting sum is converted to the range 0 to M−1 using the modulus operator.  
 <br>
 For example, if the string “aaaabbbb” is passed to sfold, then the first four bytes (“aaaa”) will be interpreted as the integer value 1 633 771 873, and the next four bytes (“bbbb”) will be interpreted as the integer value 1 650 614 882. Their sum is 3 284 386 755 (when treated as an unsigned integer). If the table size is 101 then the modulus function will cause this key to hash to slot 75 in the table.
 
