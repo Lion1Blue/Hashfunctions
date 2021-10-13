@@ -12,10 +12,11 @@ MainWindow::MainWindow(QWidget *parent)
 	
 	QObject::connect(ui->pushButtonGenerate, SIGNAL(clicked()), this, SLOT(GenerateClicked()));
 
-	ui->comboBoxAlgorithmns->insertItem(0, "String Folding");
-	ui->comboBoxAlgorithmns->insertItem(1, "Polynomail Rolling Hash");
-	ui->comboBoxAlgorithmns->insertItem(2, "Robert Sedgwicks Algorithm");
-	ui->comboBoxAlgorithmns->insertItem(3, "ELF Hash");
+	ui->comboBoxAlgorithmns->insertItem(0, "Identity Function");
+	ui->comboBoxAlgorithmns->insertItem(1, "String Folding");
+	ui->comboBoxAlgorithmns->insertItem(2, "Polynomail Rolling Hash");
+	ui->comboBoxAlgorithmns->insertItem(3, "Robert Sedgwicks Algorithm");
+	ui->comboBoxAlgorithmns->insertItem(4, "ELF Hash");
 
 	ui->textEditOutput->setReadOnly(true);
 	QObject::connect(ui->textEditInput, SIGNAL(textChanged()), this, SLOT(TextEditTextChanged()));
@@ -32,24 +33,31 @@ void MainWindow::GenerateClicked() {
 
 	switch (currentIndex)
 	{
-	//String Folding
+	//Identity Function
 	case 0:
+		output = ui->textEditInput->toPlainText();
+		break;
+
+	//String Folding
+	case 1:
 		result = hash.StringFolding(input);
 		output = QString::number(result);
 		break;
 
 	//Polynomail Rolling Hash
-	case 1: 
+	case 2: 
 		result = hash.PolynomialRollingHash(input);
 		output = QString::number(result);
 		break;
-
-	case 2:
+	
+	//RS Hash http://www.partow.net/programming/hashfunctions/index.html
+	case 3:
 		result = hash.RSHash(input.c_str(), input.length());
 		output = QString::number(result);
 		break;
 
-	case 3:
+	//ELF Hash
+	case 4:
 		result = hash.ELFHash(input.c_str(), input.length());
 		output = QString::number(result);
 		break;
