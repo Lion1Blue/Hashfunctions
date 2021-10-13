@@ -48,7 +48,7 @@ For example, if the string “aaaabbbb” is passed to sfold, then the first fou
 
 **************************************************************************************************************************************************************************
 
-### Polynomial rolling hash fuinction
+### Polynomial rolling hash function
 
 A good way to definde the hash of a string **s** of length **n** is   
 
