@@ -34,6 +34,42 @@ const unsigned long long Hashfunction::StringFolding(std::string& input, unsigne
 	return result % m;
 }
 
+const unsigned long long  Hashfunction::RSHash(const char* str, unsigned int length)
+{
+	const unsigned long long b = 378551;
+	unsigned long long a = 63689;
+	unsigned long long hash = 0;
+
+	for (int i = 0; i < length; ++str, ++i)
+	{
+		hash = hash * a + (*str);
+		a = a * b;
+	}
+
+	return hash;
+}
+
+const unsigned long long Hashfunction::ELFHash(const char* str, unsigned int length)
+{
+	unsigned long long hash = 0;
+	unsigned long long x = 0;
+
+	for (int i = 0; i < length; ++str, ++i)
+	{
+		hash = (hash << 4) + (*str);
+
+		if ((x = hash & 0xF00000000000L) != 0)
+		{
+			hash ^= (x >> 24);
+		}
+
+		hash &= ~x;
+	}
+
+	return hash;
+}
+
+
 const unsigned long long Hashfunction::PowULL(unsigned long long base, unsigned short exponent) {
 	unsigned long long result = base;
 

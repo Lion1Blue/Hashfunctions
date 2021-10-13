@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>683</width>
+    <width>684</width>
     <height>618</height>
    </rect>
   </property>
@@ -39,7 +39,7 @@
        <widget class="QLabel" name="labelTitle">
         <property name="font">
          <font>
-          <pointsize>20</pointsize>
+          <pointsize>25</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -64,17 +64,28 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>75</width>
+            <width>125</width>
             <height>16777215</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
           <property name="text">
-           <string>Algorithmns</string>
+           <string>Algorithmns:</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBoxAlgorithmns"/>
+         <widget class="QComboBox" name="comboBoxAlgorithmns">
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -85,6 +96,11 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Input</string>
@@ -99,6 +115,11 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
        </widget>
       </item>
       <item>
@@ -108,6 +129,11 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Output</string>
@@ -121,6 +147,11 @@
           <width>16777215</width>
           <height>75</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
         </property>
        </widget>
       </item>
@@ -141,6 +172,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButtonGenerate">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Generate</string>
           </property>

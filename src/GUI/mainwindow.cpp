@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 	ui->comboBoxAlgorithmns->insertItem(0, "String Folding");
 	ui->comboBoxAlgorithmns->insertItem(1, "Polynomail Rolling Hash");
+	ui->comboBoxAlgorithmns->insertItem(2, "Robert Sedgwicks Algorithm");
+	ui->comboBoxAlgorithmns->insertItem(3, "ELF Hash");
 
 	ui->textEditOutput->setReadOnly(true);
 	QObject::connect(ui->textEditInput, SIGNAL(textChanged()), this, SLOT(TextEditTextChanged()));
@@ -26,24 +28,37 @@ void MainWindow::GenerateClicked() {
 	unsigned long long result = 0;
 	Hashfunction hash;
 	std::string input = ui->textEditInput->toPlainText().toStdString();
+	QString output = " ";
 
 	switch (currentIndex)
 	{
 	//String Folding
 	case 0:
 		result = hash.StringFolding(input);
+		output = QString::number(result);
 		break;
 
 	//Polynomail Rolling Hash
 	case 1: 
 		result = hash.PolynomialRollingHash(input);
+		output = QString::number(result);
+		break;
+
+	case 2:
+		result = hash.RSHash(input.c_str(), input.length());
+		output = QString::number(result);
+		break;
+
+	case 3:
+		result = hash.ELFHash(input.c_str(), input.length());
+		output = QString::number(result);
 		break;
 
 	default:
 		break;
 	}
 
-	ui->textEditOutput->setText(QString::number(result));
+	ui->textEditOutput->setText(output);
 }
 
 void MainWindow::TextEditTextChanged() {
