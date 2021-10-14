@@ -52,13 +52,13 @@ void MainWindow::GenerateClicked() {
 	
 	//RS Hash http://www.partow.net/programming/hashfunctions/index.html
 	case 3:
-		result = hash.RSHash(input.c_str(), input.length());
+		result = hash.RSHash(input);
 		output = QString::number(result);
 		break;
 
 	//ELF Hash
 	case 4:
-		result = hash.ELFHash(input.c_str(), input.length());
+		result = hash.ELFHash(input);
 		output = QString::number(result);
 		break;
 

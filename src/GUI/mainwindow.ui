@@ -103,7 +103,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Input</string>
+         <string>Input:</string>
         </property>
        </widget>
       </item>
@@ -119,6 +119,9 @@
          <font>
           <pointsize>15</pointsize>
          </font>
+        </property>
+        <property name="placeholderText">
+         <string>some Input Text ...</string>
         </property>
        </widget>
       </item>
@@ -136,7 +139,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Output</string>
+         <string>Output:</string>
         </property>
        </widget>
       </item>
@@ -152,6 +155,9 @@
          <font>
           <pointsize>15</pointsize>
          </font>
+        </property>
+        <property name="placeholderText">
+         <string>Hashvalue ...</string>
         </property>
        </widget>
       </item>
