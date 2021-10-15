@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
 	ui->comboBoxAlgorithmns->insertItem(2, "Polynomail Rolling Hash");
 	ui->comboBoxAlgorithmns->insertItem(3, "Robert Sedgwicks Algorithm");
 	ui->comboBoxAlgorithmns->insertItem(4, "ELF Hash");
+	ui->comboBoxAlgorithmns->insertItem(5, "SHA-256");
 
 	ui->textEditOutput->setReadOnly(true);
 	QObject::connect(ui->textEditInput, SIGNAL(textChanged()), this, SLOT(TextEditTextChanged()));
@@ -60,6 +61,11 @@ void MainWindow::GenerateClicked() {
 	case 4:
 		result = hash.ELFHash(input);
 		output = QString::number(result);
+		break;
+
+	//SHA-256
+	case 5:
+		output = QString::fromStdString(hash.SHA256(input));
 		break;
 
 	default:

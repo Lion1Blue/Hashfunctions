@@ -17,5 +17,7 @@ public:
 private:
 
 	const unsigned long long PowULL(unsigned long long base, unsigned short exponent);
+	unsigned int leftRotate(unsigned int n, unsigned int d);
+	unsigned int rightRotate(unsigned int n, unsigned int d);
 };
 
