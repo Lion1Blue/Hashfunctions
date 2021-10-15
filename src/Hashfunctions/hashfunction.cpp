@@ -69,9 +69,7 @@ const std::string Hashfunction::SHA256(std::string &input)
 	std::vector<std::string> chunks;
 
 	for (size_t i = 0, chunkCount = binaryData.length() / 512; i < chunkCount; i++) {
-		char chunk[512];
-		size_t a = binaryData.copy(chunk, 512, i * 512);
-		chunks.push_back(std::string(chunk));
+		chunks.push_back(binaryData.substr(i * 512, 512));
 	}
 
 	//Step 5 Create Message Schedule
